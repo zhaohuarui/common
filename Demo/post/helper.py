@@ -55,6 +55,7 @@ def get_top_n(n):
     #     data[0] = post
     id_list = [post_id for post_id, _ in rank_data]
     posts = Post.objects.filter(id__in=id_list)
+    #use sorted
     posts = sorted(posts, key=lambda post: id_list.index(post.id))
 
     # 整理数据格式
